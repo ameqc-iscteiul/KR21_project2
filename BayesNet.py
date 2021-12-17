@@ -172,7 +172,7 @@ class BayesNet:
             new_cpt = deepcopy(cpt)
             incompat_indices = cpt[var_names] != instantiation[var_names].values
             incompat_indices = [any(x[1]) for x in incompat_indices.iterrows()]
-            new_cpt.loc[incompat_indices, 'p'] = 0.0
+            new_cpt.loc[incompat_indices, 'p'] = '_'
             return new_cpt
         else:
             return cpt
